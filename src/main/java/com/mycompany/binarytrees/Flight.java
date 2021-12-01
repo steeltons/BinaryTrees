@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Objects;
 import java.util.Random;
 
-public class Flight implements Comparable<Flight>{
+public class Flight implements Comparable<Flight>, HashStructure<String, String>{
 
     private final String flightCode;
     private final char[] flightNumberCharArray = new char[4];
@@ -58,4 +58,13 @@ public class Flight implements Comparable<Flight>{
         return result;
     }
 
+    @Override
+    public String getKey() {
+        return flightCode;
+    }
+
+    @Override
+    public String getValue() {
+        return getFlightNumber();
+    }
 }

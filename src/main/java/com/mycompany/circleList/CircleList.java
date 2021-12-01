@@ -342,9 +342,9 @@ public class CircleList<E extends Comparable<E>> implements Iterable<E>, Cloneab
         int counter = 0;
         do{
             temp.append("["+(++counter)+"."+jumper.elem+"]->");
-            if(counter % 20 == 0) temp.append("\n");
             jumper = jumper.next;
         }while(!jumper.equals(Head));
+        temp.delete(temp.length()-2, temp.length());
         return temp.toString();
     }
 }
